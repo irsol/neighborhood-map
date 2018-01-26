@@ -87,8 +87,11 @@ function setFoursquareContent(infowindow) {
             '<p><a href="' + url + '">' + url + '</a></p>';
         infowindow.setContent(content);
 
-    }).fail(function() {
-        console.log('Error fetching data from api.foursquare.com');
+    }).fail(function(e) {
+        console.log(e.responseText);
+
+        // notify user about errors
+        infowindow.setContent('<h6>Error occured during retrieving data from Foursquare!</h6>');
     });
 }
 
