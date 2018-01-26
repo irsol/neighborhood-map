@@ -71,13 +71,13 @@ function setFoursquareContent(infowindow) {
         response = marker.response.venues[0];
 
         // parse Foursquare response
-        var name = response.name;
+        var name = response.name || 'no name found';
         var street = response.location.formattedAddress[0];
         var city = response.location.formattedAddress[1];
-        var country = response.location.country;
+        var country = response.location.country || 'no country found';
         var category = response.categories[0].name;
-        var url = response.url;
-        var visitors = response.hereNow.summary;
+        var url = response.url || 'no url found';
+        var visitors = response.hereNow.summary || 'no visitors found';
 
         // format content for the info window
         content =
