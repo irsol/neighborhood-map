@@ -117,4 +117,4 @@ var venuesBerlin = [
         long: 13.3946803,
         type: 'History Museum'
     },
-]
+];
