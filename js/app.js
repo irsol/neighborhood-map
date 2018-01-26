@@ -71,13 +71,13 @@ function setFoursquareContent(infowindow) {
         response = marker.response.venues[0];
 
         // parse Foursquare response
-        name = response.name;
-        street = response.location.formattedAddress[0];
-        city = response.location.formattedAddress[1];
-        country = response.location.country;
-        category = response.categories[0].name;
-        url = response.url;
-        visitors = response.hereNow.summary;
+        var name = response.name;
+        var street = response.location.formattedAddress[0];
+        var city = response.location.formattedAddress[1];
+        var country = response.location.country;
+        var category = response.categories[0].name;
+        var url = response.url;
+        var visitors = response.hereNow.summary;
 
         // format content for the info window
         content =
@@ -109,16 +109,16 @@ var Venue = function(venue) {
 
     this.setVisible = function(v) {
         this.marker.setVisible(v);
-    }
+    };
 
     this.marker.addListener('click', createInfowindow);
 
     // trigger click event to show info window
     this.showInfo = function() {
         google.maps.event.trigger(this.marker, 'click');
-    }
+    };
 
-}
+};
 
 // create map and initialize it with markers
 function initMap() {
