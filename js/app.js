@@ -9,23 +9,23 @@ function ViewModel()
     initMap();
 
     // connect search input and list of venues using Knockout
+    // use forEach() method, it's also fasten code
     this.searchInput = ko.observable("");
+    var self = this;
 
     this.venuesBerlin = ko.computed(function() {
         var result = [];
-
-        for (var i = 0; i < markers.length; i++) {
-
-            // show or hide items in the list if ther names
-            // match or don't match search input
-            if (markers[i].title.toLowerCase().includes(
-                this.searchInput().toLowerCase())) {
-                result.push(markers[i]);
-                markers[i].setVisible(true);
+        markers.forEach(function(marker) {
+            if (marker.title.toLowerCase().includes(
+                self.searchInput().toLowerCase())) {
+                result.push(marker);
+                marker.setVisible(true);
             } else {
-                markers[i].setVisible(false);
+                marker.setVisible(false);
             }
-        }
+
+        });
+
         return result;
     }, this);
 }
@@ -38,10 +38,10 @@ function createInfowindow() {
     // bounce when show info window
     marker.setAnimation(google.maps.Animation.BOUNCE);
 
-    // set BOUNCE animation timeout (only few bounces)
+    // set BOUNCE animation timeout (one bounce 700ms, only few bounces)
     setTimeout(function() {
         self.marker.setAnimation(null);
-    }, 1500);
+    }, 1400);
 
     setFoursquareContent(infowindow);
 
