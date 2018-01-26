@@ -1,5 +1,7 @@
 # Berlin neighborhood map
 
+![Application screen shot](https://github.com/irsol/neighborhood-map/blob/master/application_screen_shot.png)
+
 
 ## Links
 - https://developers.google.com/maps/documentation/javascript/examples/map-simple
