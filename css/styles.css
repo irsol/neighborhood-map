@@ -1,5 +1,4 @@
 
-
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
@@ -10,4 +9,13 @@ html, body {
   /*height: 100%;*/
   margin: 10;
   padding: 10;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 767px) {
+	main {
+		flex-direction: row;
+		position: relative;
+	}
 }
